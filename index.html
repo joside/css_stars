@@ -1,0 +1,87 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+        <title>CSS Starfield</title>
+        <style type="text/css">
+            body {
+                background-color: #000000;
+            }
+            .anime {
+                color: white;
+                font-size: 50px;
+                top: 50%;
+                left: 50%;
+                position: fixed;
+                height: 400px;
+                margin-top: -200px;
+                width: 400px;
+                margin-left: -200px;
+                background-color: transparent;
+                text-align: center;
+                vertical-align: middle;
+                line-height: 400px;
+            }
+            .anime::before {
+                content: "";
+                top: 50%;
+                left: 50%;
+                position: fixed;
+                height: 400px;
+                margin-top: -200px;
+                width: 400px;
+                margin-left: -200px;
+                z-index: -1;
+                background-color: #000000;
+                background-image: url(star.png),url(star.png),url(star.png),url(star.png),url(star.png),url(star.png),url(star.png),url(star.png);
+                background-repeat: no-repeat,no-repeat,no-repeat,no-repeat,no-repeat,no-repeat,no-repeat,no-repeat;
+                background-size: 1px, 1px, 1px, 1px, 1px, 1px, 1px, 1px;
+            }
+            
+            @keyframes animateStarfield {
+                0% { 
+                    background-position: 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%;
+                    background-size: 1px, 1px, 1px, 1px, 1px, 1px, 1px, 1px;
+                    transform: rotate(0deg);
+                }
+                50% { 
+                    background-position: 85% 85%, 85% 15%, 50% 0, 15% 15%, 0 50%, 15% 85%, 50% 100%, 100% 50%;
+                    background-size: 50px, 40px, 30px, 60px, 70px, 80px, 40px, 60px;
+                    transform: rotate(180deg); 
+                }
+                100% { 
+                    background-position: 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%;
+                    background-size: 1px, 1px, 1px, 1px, 1px, 1px, 1px, 1px;
+                    transform: rotate(360deg);
+                }
+            }
+            
+            @-webkit-keyframes animateStarfield {
+                0% { 
+                    background-position: 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%;
+                    background-size: 1px, 1px, 1px, 1px, 1px, 1px, 1px, 1px;
+                    -webkit-transform: rotate(0deg);
+                }
+                50% { 
+                    background-position: 85% 85%, 85% 15%, 50% 0, 15% 15%, 0 50%, 15% 85%, 50% 100%, 100% 50%;
+                    background-size: 50px, 40px, 30px, 60px, 70px, 80px, 40px, 60px;
+                    -webkit-transform: rotate(180deg); 
+                }
+                100% { 
+                    background-position: 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%;
+                    background-size: 1px, 1px, 1px, 1px, 1px, 1px, 1px, 1px;
+                    -webkit-transform: rotate(360deg);
+                }
+            }
+            
+            .anime::before {
+                animation: animateStarfield 5s linear infinite;
+                -webkit-animation: animateStarfield 5s linear infinite;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <div class="anime">STARS</div>
+    </body>
+</html>
